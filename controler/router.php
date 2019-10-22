@@ -12,8 +12,10 @@ switch ($page){
         controler_update_pet();
         break;
     case "add_pet":
-        echo "hello";
         controler_new_pet();
+        break;
+    case "save_pet":
+        controler_save_pet();
         break;
     case "delete":
         break;

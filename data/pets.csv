@@ -1,8 +1,5 @@
-name, type, sound
-Molly, Cat, Meow
-Spot, Dog, Woof
-Nemo, Fish, BlubBlub
-Micky, Mouse, Squeek
-Sprinkles,Hedgehog,Snuffle
-Sprinkles,Hedgehog,Snuffle
-Sprinkles,Hedgehog,Snuffle
+name,type,sound
+Molly,Cat,Meow
+Spot,Dog,Woof
+Nemo,Fish,Blub
+Micky,Mouse,Squeek

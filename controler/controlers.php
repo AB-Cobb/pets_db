@@ -21,6 +21,16 @@ function controler_update_pet(){
     $content = "view/update_pet.php";
 }
 
+function controler_save_pet(){
+    $name = $_POST["name"];
+    $type = $_POST["type"];
+    $sound = $_POST["sound"];
+    $index = $_POST["index"];
+    include ("model/pets.php");
+    update_pet($name,$type,$sound, $index);
+    header ("location:?page=read");
+}
+
 function controler_new_pet(){
     //echo "Hello from controller";
     $name = $_POST["name"];

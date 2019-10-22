@@ -2,6 +2,7 @@
 
 
 
+
 function get_all_pets(){
     $file_path="data/pets.csv";
     $handle = fopen($file_path, 'r');
@@ -9,7 +10,9 @@ function get_all_pets(){
     $pats_arr = array();
     while(! feof($handle))
     {
-        array_push($pats_arr, fgetcsv($handle));
+        $line = fgetcsv($handle);
+        if (!empty($line))
+            array_push($pats_arr, $line);
     }
     fclose($handle);
     return $pats_arr;
@@ -25,4 +28,18 @@ function add_pet($name, $type, $sound){
     $handle = fopen($file_path, 'a');
     $pet = array($name, $type, $sound);
     fputcsv ($handle,$pet);
+    fclose($handle);
+}
+
+function update_pet($name,$type,$sound, $index){
+    $pets = get_all_pets();
+    $pet = [$name,$type,$sound];
+    $pets[$index] = $pet;
+    $file_path="data/pets.csv";
+    $handle = fopen($file_path, 'w');
+    fputcsv($handle,['name','type','sound']);
+    foreach ($pets as $line){
+        fputcsv($handle,$line);
+    }
+    fclose($handle);
 }
