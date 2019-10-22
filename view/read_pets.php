@@ -15,7 +15,7 @@
                 <td>$pet[0]</td>
                 <td>$pet[1]</td>
                 <td>$pet[2]</td>
-                <td><a href=?page=update&index=$index >update</a></td>
+                <td><a href=?page=update&index=$index >update</a> | <a href=?page=delete&index=$index >delete</a></td>
             </tr>
             ";
             $index++;

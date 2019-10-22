@@ -43,3 +43,15 @@ function update_pet($name,$type,$sound, $index){
     }
     fclose($handle);
 }
+
+function delete_pet($i){
+    $file_path="data/pets.csv";
+    $pets = get_all_pets();
+    unset($pets[$i]);
+    $handle = fopen($file_path, 'w');
+    fputcsv($handle,['name','type','sound']);
+    foreach ($pets as $line){
+        fputcsv($handle,$line);
+    }
+    fclose($handle);
+}

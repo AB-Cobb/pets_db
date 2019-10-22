@@ -32,11 +32,17 @@ function controler_save_pet(){
 }
 
 function controler_new_pet(){
-    //echo "Hello from controller";
     $name = $_POST["name"];
     $type = $_POST["type"];
     $sound = $_POST["sound"];
     include ("model/pets.php");
     add_pet($name, $type, $sound);
+    header ("location:?page=read");
+}
+
+function controler_delete_pet(){
+    $index = $_GET["index"];
+    include ("model/pets.php");
+    delete_pet($index);
     header ("location:?page=read");
 }

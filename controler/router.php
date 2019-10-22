@@ -18,5 +18,6 @@ switch ($page){
         controler_save_pet();
         break;
     case "delete":
+        controler_delete_pet();
         break;
 }
